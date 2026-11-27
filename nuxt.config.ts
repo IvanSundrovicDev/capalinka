@@ -1,4 +1,8 @@
-const siteUrl = (process.env.NUXT_PUBLIC_SITE_URL || 'https://www.capalinka.hr').replace(/\/$/, '')
+const siteUrl = (
+  process.env.NUXT_PUBLIC_SITE_URL ||
+  process.env.URL ||
+  'https://www.capalinka.hr'
+).replace(/\/$/, '')
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',

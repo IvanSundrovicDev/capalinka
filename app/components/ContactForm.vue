@@ -1,5 +1,13 @@
 <template>
-  <form ref="formEl" class="contact-form" novalidate @submit.prevent="handleSubmit">
+  <form
+    ref="formEl"
+    class="contact-form"
+    name="kontakt"
+    method="POST"
+    action="/kontakt"
+    novalidate
+    @submit.prevent="handleSubmit"
+  >
     <div class="contact-form__intro">
       <span class="overline">Pošaljite upit</span>
       <h2>Recite nam što vam treba</h2>
@@ -82,21 +90,21 @@
 
     <div class="consent">
       <input
-        id="contact-gdpr"
-        v-model="form.gdpr"
+        id="contact-privacy"
+        v-model="form.privacyAck"
         type="checkbox"
-        name="gdpr"
-        :aria-invalid="errors.gdpr ? 'true' : undefined"
-        :aria-describedby="errors.gdpr ? 'error-gdpr' : undefined"
+        name="privacy-ack"
+        :aria-invalid="errors.privacyAck ? 'true' : undefined"
+        :aria-describedby="errors.privacyAck ? 'error-privacy' : undefined"
       />
       <div>
-        <label for="contact-gdpr">
-          Slažem se da se navedeni podaci koriste isključivo za odgovor na ovaj
-          upit.
+        <label for="contact-privacy">
+          Potvrđujem da sam pročitao/la Politiku privatnosti i da razumijem
+          obradu podataka za odgovor na ovaj upit.
         </label>
         <NuxtLink to="/politika-privatnosti">Politika privatnosti</NuxtLink>
-        <p v-if="errors.gdpr" id="error-gdpr" class="field__error">
-          {{ errors.gdpr }}
+        <p v-if="errors.privacyAck" id="error-privacy" class="field__error">
+          {{ errors.privacyAck }}
         </p>
       </div>
     </div>
@@ -143,7 +151,7 @@ const form = reactive({
   service: '',
   location: '',
   message: '',
-  gdpr: false,
+  privacyAck: false,
 })
 
 const formEl = ref<HTMLFormElement | null>(null)
@@ -169,8 +177,8 @@ function validate() {
     errors.message = 'Opišite nam ukratko što vam je potrebno (najmanje 10 znakova).'
   }
 
-  if (!form.gdpr) {
-    errors.gdpr = 'Potreban je pristanak na korištenje podataka za odgovor na upit.'
+  if (!form.privacyAck) {
+    errors.privacyAck = 'Potrebna je potvrda da ste pročitali Politiku privatnosti.'
   }
 
   return Object.keys(errors).length === 0
@@ -195,6 +203,7 @@ function handleSubmit() {
     form.phone ? `Telefon: ${form.phone}` : '',
     form.service ? `Usluga: ${form.service}` : '',
     form.location ? `Lokacija: ${form.location}` : '',
+    'Potvrda politike privatnosti: da',
     '',
     'Poruka:',
     form.message,

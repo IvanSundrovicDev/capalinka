@@ -1,0 +1,27 @@
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Set this in Netlify → Site configuration → Environment variables
+  # to the final custom domain or the deployed Netlify URL.
+  # NUXT_PUBLIC_SITE_URL = "https://www.example.hr"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/_nuxt/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

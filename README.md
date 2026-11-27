@@ -33,25 +33,34 @@ Open `http://localhost:3000`.
 
 ## Deploying
 
-The site is designed for static hosting (Netlify, Vercel, Cloudflare Pages, GitHub Pages, or any static host):
+The site is configured for **Netlify** and other static hosts:
 
 - Build command: `npm run generate`
 - Publish directory: `.output/public`
 - Node: 22 LTS or newer
+- `netlify.toml` in the repository already provides the build command, publish directory, Node version, security headers and asset caching.
 
-Set the production URL before building:
+### Deploying on Netlify
+
+1. In Netlify, choose **Add new site → Import an existing project**.
+2. Connect the GitHub repository `IvanSundrovicDev/capalinka` and the `main` branch. Netlify will read `netlify.toml` automatically.
+3. Set the environment variable **`NUXT_PUBLIC_SITE_URL`** to the final site URL (the custom domain or the `.netlify.app` address) under **Site configuration → Environment variables**.
+4. Deploy. Canonical URLs, Open Graph URLs, schema IDs and the sitemap use that value. If the variable is not set, the build uses Netlify's `URL` environment variable, then falls back to `https://www.capalinka.hr`.
+
+The contact form intentionally uses the visitor’s email client (`mailto:`) and does not require Netlify Forms. If you later switch to Netlify Forms, update the privacy policy and add a static form skeleton in `public/` so Netlify detects the form at build time.
+
+For other static hosts, set the same environment variable before building:
 
 ```bash
 NUXT_PUBLIC_SITE_URL="https://your-domain.hr" npm run generate
 ```
 
-Canonical URLs, Open Graph URLs, schema IDs and the sitemap use this value.
-
 ## ⚠️ Before going live — replace these placeholders
 
 1. **Domain**
    - The fallback domain is `https://www.capalinka.hr`.
-   - Change it via `NUXT_PUBLIC_SITE_URL` (also see `.env.example`), not by editing URLs throughout the code.
+   - On Netlify, set `NUXT_PUBLIC_SITE_URL` to the custom domain (or the `.netlify.app` URL) under Site configuration → Environment variables. If it is not set, the build uses Netlify's `URL` variable, then the fallback.
+   - Change it via the environment, not by editing URLs throughout the code.
 
 2. **Email address**
    - `app/data/site.ts` contains the placeholder email `kontakt@capalinka.hr`.
@@ -75,13 +84,15 @@ Canonical URLs, Open Graph URLs, schema IDs and the sitemap use this value.
    - The gallery note explicitly states that illustrations are used until real photos are available; remove it when photos are added.
 
 6. **Privacy policy**
-   - Review `/politika-privatnosti` with the owner or a legal adviser.
-   - Add the actual hosting provider, email provider, OIB/legal details and retention details when known.
-   - If analytics, advertising or embedded third-party tools are added later, update the cookie/privacy information and add consent if required.
+   - `/politika-privatnosti` has been expanded with Netlify/CDN hosting, Netlify DPA/DPF information, OSMF map processing, legal bases, retention, transfers, rights and the current AZOP address.
+   - Still add the **full street address of the registered seat and OIB** when available, and insert the actual email provider if it processes data outside the EEA.
+   - Review the final wording with the owner or a Croatian legal adviser before publication.
+   - If analytics, advertising, embedded video or other third-party tools are added later, update the cookie/privacy information and add prior consent where required.
 
 7. **Contact form**
    - The form validates fields and then opens the visitor’s email client with a prefilled message (`mailto:`). The website server does not store enquiries.
-   - For direct server-side delivery, connect the form to Netlify Forms, Formspree, Resend or a small API endpoint. The UI is in `app/components/ContactForm.vue`.
+   - Name and message are required; phone is optional; the form has no email field. The checkbox is an acknowledgment of the privacy policy, not marketing consent.
+   - For direct server-side delivery, connect the form to Netlify Forms, Formspree, Resend or a small API endpoint. The UI is in `app/components/ContactForm.vue`; any change to this data flow must also be reflected in the privacy policy.
 
 8. **Social profiles**
    - No social profiles were provided, so no `sameAs` links are emitted. Add them to the LocalBusiness schema once available.
@@ -140,10 +151,12 @@ public/
   favicon.svg, icons, og-image.png, logo-mark.svg
 scripts/generate-assets.mjs regenerates visual assets
 nuxt.config.ts              modules, prerender routes, global meta
+netlify.toml                Netlify build, headers and caching configuration
 ```
 
 ## Notes
 
 - Nuxt also creates a `robots.txt` and `sitemap.xml` at build time. The privacy page is excluded from the sitemap and set to `noindex`; it remains accessible from the footer.
 - The Leaflet map on the contact page loads OpenStreetMap tiles only when that page is opened.
+- Netlify build settings live in `netlify.toml`; set `NUXT_PUBLIC_SITE_URL` in Netlify for correct canonical and sitemap URLs.
 - Gallery illustrations are original vector artwork made for this project and can be replaced without changing the lightbox component.
