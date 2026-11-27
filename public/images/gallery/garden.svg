@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f0"/>
+      <stop offset="1" stop-color="#f1ecdf"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#cfe6da" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#cfe6da" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#143b36"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)" opacity=".055"/>
+  <circle cx="940" cy="250" r="300" fill="url(#glow)"/>
+  <circle cx="980" cy="250" r="230" fill="none" stroke="#cfe6da" stroke-width="1.5" opacity=".55"/>
+  <rect x="38" y="38" width="1124" height="824" rx="26" fill="none" stroke="#143b36" stroke-opacity=".12" stroke-width="2"/>
+  <g opacity=".5">
+    <g transform="translate(82 106) rotate(-32)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+    <g transform="translate(1118 794) rotate(148)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+  </g>
+  <text x="1110" y="130" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#143b36" opacity=".14">04</text>
+  <g transform="translate(0 8)">
+    
+      <g stroke="#143b36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Sun and sky -->
+        <circle cx="970" cy="212" r="42" stroke="#5c9a84" stroke-width="3.4"/>
+        <path d="M970 146V128M970 296V278M904 212H886M1054 212H1036M923 165L910 152M1017 259L1030 272M1017 165L1030 152M923 259L910 272" stroke="#5c9a84" stroke-width="3"/>
+        <path d="M746 190C756 176 774 176 784 190C794 174 816 174 826 190" stroke-width="3" opacity=".55"/>
+
+        <!-- House -->
+        <path d="M322 704H822" stroke="#d8cfbe" stroke-width="4"/>
+        <path d="M384 684V442L578 288L772 442V684"/>
+        <path d="M408 684V455L578 320L748 455V684" opacity=".45"/>
+        <path d="M578 288L762 438" stroke-width="3" opacity=".4"/>
+        <rect x="674" y="354" width="42" height="58" fill="#fbf8f0"/>
+        <path d="M674 383H716M695 354V412"/>
+        <path d="M526 684V590H606V684" fill="#fbf8f0"/>
+        <circle cx="596" cy="642" r="3" fill="#143b36" stroke="none"/>
+        <path d="M452 500H506V556H452Z" fill="#fbf8f0"/>
+        <path d="M479 500V556M452 528H506" stroke-width="3"/>
+
+        <!-- Path -->
+        <path d="M518 684C500 720 468 758 424 790M614 684C632 720 664 758 708 790"/>
+        <path d="M490 700H642M468 730H660M440 760H690" stroke-width="3" opacity=".38"/>
+
+        <!-- Tree -->
+        <path d="M190 700C194 620 194 550 188 480M188 590L146 534M190 620L242 556" stroke-width="4"/>
+        <path d="M188 474C134 468 108 424 126 380C100 342 128 296 170 290C180 244 240 228 274 258C316 240 354 276 344 318C394 336 388 402 354 422C354 460 318 486 284 474C258 502 212 510 188 474Z" fill="#9ccdbd" fill-opacity=".18"/>
+        <path d="M188 474C134 468 108 424 126 380C100 342 128 296 170 290C180 244 240 228 274 258C316 240 354 276 344 318C394 336 388 402 354 422C354 460 318 486 284 474C258 502 212 510 188 474Z" stroke="#5c9a84" stroke-width="3"/>
+
+        <!-- Hedge -->
+        <path d="M796 684V560C796 536 814 520 838 520C850 492 886 482 906 504C928 482 964 492 972 520C1002 518 1022 540 1020 566V684" fill="#9ccdbd" fill-opacity=".24" stroke="#5c9a84" stroke-width="3.2"/>
+        <path d="M838 520V684M904 504V684M970 520V684" stroke="#5c9a84" stroke-width="2" opacity=".45"/>
+
+        <!-- Rake and watering can -->
+        <path d="M792 680L718 600" stroke-width="4"/>
+        <path d="M700 580L736 610" stroke-width="4"/>
+        <path d="M694 570L714 590M702 579L722 599M710 588L730 608" stroke-width="3.4"/>
+        <path d="M240 690H336L322 746H254Z" fill="#fbf8f0"/>
+        <path d="M336 700L374 692V722L336 714" stroke-width="3.4"/>
+        <path d="M266 690C266 674 278 664 294 664" stroke-width="4"/>
+
+        <!-- Flowers -->
+        <path d="M700 710V684M712 712V680M684 714V692" stroke="#5c9a84" stroke-width="3"/>
+        <circle cx="700" cy="678" r="7" fill="#9ccdbd" stroke="#5c9a84" stroke-width="2.4"/>
+        <circle cx="712" cy="674" r="6" fill="#9ccdbd" stroke="#5c9a84" stroke-width="2.4"/>
+        <circle cx="684" cy="686" r="6" fill="#9ccdbd" stroke="#5c9a84" stroke-width="2.4"/>
+      </g>
+    
+  </g>
+  <g fill="#5c9a84" opacity=".65">
+    <path d="M250 205C251.4 211.4 254.2 214.2 260.6 215.6C254.2 217 251.4 219.8 250 226.2C248.6 219.8 245.8 217 239.4 215.6C245.8 214.2 248.6 211.4 250 205Z"/>
+    <path d="M930 545C931 549.8 933.2 552 938 553C933.2 554 931 556.2 930 561C929 556.2 926.8 554 922 553C926.8 552 929 549.8 930 545Z"/>
+  </g>
+</svg>

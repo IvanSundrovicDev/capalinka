@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f0"/>
+      <stop offset="1" stop-color="#f1ecdf"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#d6e7de" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#d6e7de" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#143b36"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)" opacity=".055"/>
+  <circle cx="940" cy="250" r="300" fill="url(#glow)"/>
+  <circle cx="980" cy="250" r="230" fill="none" stroke="#d6e7de" stroke-width="1.5" opacity=".55"/>
+  <rect x="38" y="38" width="1124" height="824" rx="26" fill="none" stroke="#143b36" stroke-opacity=".12" stroke-width="2"/>
+  <g opacity=".5">
+    <g transform="translate(82 106) rotate(-32)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+    <g transform="translate(1118 794) rotate(148)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+  </g>
+  <text x="1110" y="130" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#143b36" opacity=".14">02</text>
+  <g transform="translate(0 8)">
+    
+      <g stroke="#143b36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M150 748H1050" stroke="#d8cfbe" stroke-width="4"/>
+        <ellipse cx="565" cy="746" rx="330" ry="36" stroke="#5c9a84" opacity=".4"/>
+
+        <!-- Wall art -->
+        <rect x="354" y="196" width="230" height="170" rx="3"/>
+        <path d="M354 304C396 250 430 266 470 312C505 275 543 264 584 316" stroke="#5c9a84" stroke-width="3.4"/>
+        <circle cx="510" cy="245" r="26" stroke="#5c9a84" stroke-width="3.2"/>
+        <rect x="616" y="220" width="116" height="146" rx="3"/>
+        <path d="M650 326C658 284 688 262 716 272C710 302 690 326 650 326Z" stroke="#5c9a84" stroke-width="3.2"/>
+
+        <!-- Sofa -->
+        <path d="M280 578V477C280 451 300 432 326 432H750C776 432 796 451 796 477V578"/>
+        <path d="M264 570H812V660C812 678 797 692 779 692H297C279 692 264 678 264 660V570Z"/>
+        <path d="M304 588V669M772 588V669"/>
+        <rect x="316" y="452" width="204" height="112" rx="22" fill="#9ccdbd" fill-opacity=".2"/>
+        <rect x="540" y="452" width="204" height="112" rx="22" fill="#fbf8f0"/>
+        <path d="M540 564H744" opacity=".55"/>
+        <path d="M280 570H796"/>
+        <path d="M306 692V724M774 692V724"/>
+
+        <!-- Coffee table -->
+        <rect x="478" y="650" width="258" height="18" rx="9" fill="#fbf8f0"/>
+        <path d="M494 668V720M716 668V720"/>
+        <path d="M532 650V631H584V650" fill="#fbf8f0"/>
+        <path d="M600 650V624H634V650" fill="#9ccdbd" fill-opacity=".25"/>
+        <circle cx="678" cy="636" r="14"/>
+
+        <!-- Floor lamp -->
+        <path d="M932 720H994M963 720V410" stroke-width="4"/>
+        <path d="M930 410H996L978 350H948Z" fill="#9ccdbd" fill-opacity=".2"/>
+        <path d="M938 350H988"/>
+        <path d="M931 327V379M919 345H939" stroke="#5c9a84" stroke-width="3"/>
+
+        <!-- Plant -->
+        <path d="M194 686C188 630 170 582 144 550M194 686C208 636 230 606 256 588M194 686C194 638 178 600 154 576" stroke="#5c9a84" stroke-width="3.4"/>
+        <path d="M151 566C136 557 131 542 137 527C151 535 158 549 154 562Z" fill="#9ccdbd" fill-opacity=".28" stroke="#5c9a84" stroke-width="3"/>
+        <path d="M227 610C237 594 254 590 267 597C262 612 247 620 232 617Z" fill="#9ccdbd" fill-opacity=".28" stroke="#5c9a84" stroke-width="3"/>
+        <path d="M160 598C144 597 133 586 130 571C146 570 159 579 164 592Z" fill="#9ccdbd" fill-opacity=".28" stroke="#5c9a84" stroke-width="3"/>
+        <path d="M165 696H223L214 748H174Z" fill="#fbf8f0"/>
+
+        <!-- Small side table -->
+        <rect x="844" y="632" width="70" height="12" rx="6" fill="#fbf8f0"/>
+        <path d="M856 644V716M902 644V716"/>
+        <path d="M863 632C863 611 870 598 885 592C900 598 907 611 907 632Z" fill="#9ccdbd" fill-opacity=".2"/>
+      </g>
+    
+  </g>
+  <g fill="#5c9a84" opacity=".65">
+    <path d="M250 205C251.4 211.4 254.2 214.2 260.6 215.6C254.2 217 251.4 219.8 250 226.2C248.6 219.8 245.8 217 239.4 215.6C245.8 214.2 248.6 211.4 250 205Z"/>
+    <path d="M930 545C931 549.8 933.2 552 938 553C933.2 554 931 556.2 930 561C929 556.2 926.8 554 922 553C926.8 552 929 549.8 930 545Z"/>
+  </g>
+</svg>

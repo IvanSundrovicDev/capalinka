@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f0"/>
+      <stop offset="1" stop-color="#f1ecdf"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#9ccdbd" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#9ccdbd" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#143b36"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)" opacity=".055"/>
+  <circle cx="940" cy="250" r="300" fill="url(#glow)"/>
+  <circle cx="980" cy="250" r="230" fill="none" stroke="#9ccdbd" stroke-width="1.5" opacity=".55"/>
+  <rect x="38" y="38" width="1124" height="824" rx="26" fill="none" stroke="#143b36" stroke-opacity=".12" stroke-width="2"/>
+  <g opacity=".5">
+    <g transform="translate(82 106) rotate(-32)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+    <g transform="translate(1118 794) rotate(148)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+  </g>
+  <text x="1110" y="130" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#143b36" opacity=".14">05</text>
+  <g transform="translate(0 8)">
+    
+      <g stroke="#143b36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Landscape -->
+        <path d="M110 640C240 550 360 560 470 630C600 520 760 530 870 630C970 580 1040 592 1110 626" stroke="#5c9a84" stroke-width="2.6" opacity=".38"/>
+        <circle cx="982" cy="206" r="38" stroke="#5c9a84" stroke-width="3.2"/>
+        <path d="M756 228C768 210 790 210 802 228C814 208 840 208 852 228" stroke-width="3" opacity=".45"/>
+        <path d="M180 700H1030" stroke="#d8cfbe" stroke-width="4"/>
+        <path d="M170 730H1030" stroke-width="5"/>
+        <path d="M210 730H310M390 730H490M570 730H670M750 730H850M930 730H1030" stroke="#5c9a84" stroke-width="3" opacity=".5"/>
+
+        <!-- Van -->
+        <path d="M324 658V448C324 430 338 416 356 416H696C718 416 738 425 753 442L844 548C854 560 860 575 860 590V658C860 676 846 690 828 690H356C338 690 324 676 324 658Z" fill="#fbf8f0"/>
+        <path d="M338 690C338 676 350 664 364 664H390C404 664 416 676 416 690M718 690C718 676 730 664 744 664H770C784 664 796 676 796 690"/>
+        <circle cx="376" cy="700" r="48" fill="#fbf8f0" stroke-width="5"/>
+        <circle cx="376" cy="700" r="21" stroke="#5c9a84" stroke-width="4"/>
+        <circle cx="758" cy="700" r="48" fill="#fbf8f0" stroke-width="5"/>
+        <circle cx="758" cy="700" r="21" stroke="#5c9a84" stroke-width="4"/>
+
+        <!-- Cabin and doors -->
+        <path d="M690 458H750L812 535H690Z" fill="#9ccdbd" fill-opacity=".16"/>
+        <path d="M494 466H660V552H494Z" fill="#9ccdbd" fill-opacity=".15" stroke-width="4"/>
+        <path d="M574 466V552M660 466V552" opacity=".4"/>
+        <path d="M690 466H744L800 538H690Z" stroke-width="4"/>
+        <path d="M702 556V650M828 556V650" stroke-width="3" opacity=".55"/>
+        <path d="M836 580H854" stroke-width="4"/>
+        <path d="M840 620H860" stroke-width="3" opacity=".5"/>
+        <path d="M324 620H848" opacity=".32"/>
+
+        <!-- Brand mark on van -->
+        <circle cx="581" cy="608" r="32" stroke="#5c9a84" stroke-width="2.4" fill="#9ccdbd" fill-opacity=".12"/>
+        <path d="M561 611L581 594L601 611M566 607V627H596V607" stroke="#5c9a84" stroke-width="2.4"/>
+
+        <!-- Boxes -->
+        <path d="M194 624H306V724H194Z" fill="#fbf8f0" stroke-width="4"/>
+        <path d="M250 624V724M194 674H306" stroke-width="3" opacity=".45"/>
+        <path d="M224 570H336V624H224Z" fill="#fbf8f0" stroke-width="4"/>
+        <path d="M280 570V624M224 598H336" stroke-width="3" opacity=".45"/>
+        <path d="M228 596L332 596" stroke="#5c9a84" stroke-width="4" opacity=".5"/>
+      </g>
+    
+  </g>
+  <g fill="#5c9a84" opacity=".65">
+    <path d="M250 205C251.4 211.4 254.2 214.2 260.6 215.6C254.2 217 251.4 219.8 250 226.2C248.6 219.8 245.8 217 239.4 215.6C245.8 214.2 248.6 211.4 250 205Z"/>
+    <path d="M930 545C931 549.8 933.2 552 938 553C933.2 554 931 556.2 930 561C929 556.2 926.8 554 922 553C926.8 552 929 549.8 930 545Z"/>
+  </g>
+</svg>

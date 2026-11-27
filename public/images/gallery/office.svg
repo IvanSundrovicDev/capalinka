@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f0"/>
+      <stop offset="1" stop-color="#f1ecdf"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#cfe5da" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#cfe5da" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#143b36"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)" opacity=".055"/>
+  <circle cx="940" cy="250" r="300" fill="url(#glow)"/>
+  <circle cx="980" cy="250" r="230" fill="none" stroke="#cfe5da" stroke-width="1.5" opacity=".55"/>
+  <rect x="38" y="38" width="1124" height="824" rx="26" fill="none" stroke="#143b36" stroke-opacity=".12" stroke-width="2"/>
+  <g opacity=".5">
+    <g transform="translate(82 106) rotate(-32)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+    <g transform="translate(1118 794) rotate(148)">
+      <path d="M0 0C28 20 48 47 58 80" stroke="#5c9a84" stroke-width="1.8" fill="none"/>
+      <path d="M14 22C4 13 1 2 6-10C17-2 22 9 21 21Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M30 42C20 34 16 23 20 11C31 18 36 29 35 41Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+      <path d="M44 61C35 52 32 41 36 30C46 38 50 49 49 60Z" fill="#9ccdbd" fill-opacity=".3" stroke="#5c9a84" stroke-width="1.4"/>
+    </g>
+  </g>
+  <text x="1110" y="130" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#143b36" opacity=".14">08</text>
+  <g transform="translate(0 8)">
+    
+      <g stroke="#143b36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M150 750H1050" stroke="#d8cfbe" stroke-width="4"/>
+        <ellipse cx="560" cy="744" rx="320" ry="34" stroke="#5c9a84" opacity=".35"/>
+
+        <!-- Window -->
+        <rect x="870" y="200" width="196" height="250" rx="4"/>
+        <path d="M968 200V450M870 325H1066"/>
+        <path d="M850 452H1086" stroke-width="4"/>
+        <circle cx="1024" cy="264" r="24" stroke="#5c9a84" stroke-width="3"/>
+
+        <!-- Shelf -->
+        <path d="M176 254H344M176 354H344M176 454H344" stroke-width="4"/>
+        <path d="M196 254V454M324 254V454" stroke-width="3" opacity=".3"/>
+        <path d="M200 346V298H224V346M234 346V314H258V346M268 346V286H292V346" fill="#fbf8f0" stroke-width="3.4"/>
+        <path d="M210 454V420H234V454M244 454V406H270V454" fill="#9ccdbd" fill-opacity=".16" stroke-width="3.2"/>
+        <path d="M290 254C290 232 304 222 320 232C334 216 352 228 348 254" stroke="#5c9a84" stroke-width="2.8" opacity=".7"/>
+
+        <!-- Pendant lamp -->
+        <path d="M566 140V210" stroke-width="3"/>
+        <path d="M522 258H610L590 210H542Z" fill="#9ccdbd" fill-opacity=".2"/>
+        <path d="M546 258H586" opacity=".5"/>
+
+        <!-- Desk -->
+        <rect x="300" y="516" width="560" height="26" rx="6" fill="#fbf8f0"/>
+        <path d="M322 542V724M838 542V724M352 640H808" stroke-width="4"/>
+        <rect x="648" y="476" width="136" height="32" rx="5" fill="#fbf8f0"/>
+        <path d="M664 476V462H756V476" stroke-width="3"/>
+        <path d="M696 500V516M742 500V516" stroke-width="3"/>
+
+        <!-- Monitor -->
+        <rect x="470" y="322" width="240" height="160" rx="8" fill="#fbf8f0"/>
+        <rect x="492" y="344" width="196" height="116" rx="3" fill="#9ccdbd" fill-opacity=".2"/>
+        <path d="M516 398C536 372 552 384 566 404C582 378 600 382 616 402" stroke="#5c9a84" stroke-width="3"/>
+        <path d="M566 482V510H610" stroke-width="4"/>
+        <circle cx="590" cy="502" r="3" fill="#5c9a84" stroke="none"/>
+
+        <!-- Keyboard and mug -->
+        <path d="M472 560H622L610 588H484Z" fill="#fbf8f0" stroke-width="3.4"/>
+        <path d="M514 690H548V720H514Z" fill="#fbf8f0"/>
+        <path d="M548 696H560C570 696 570 710 560 710H548" stroke-width="3"/>
+        <path d="M520 682C520 672 528 666 536 666" stroke="#5c9a84" stroke-width="2.6" opacity=".7"/>
+
+        <!-- Chair -->
+        <path d="M400 586H574V676C574 692 562 704 546 704H428C412 704 400 692 400 676V586Z" fill="#9ccdbd" fill-opacity=".16"/>
+        <path d="M422 704V744M552 704V744M414 744H436M532 744H554M426 756H438M520 756H532" stroke-width="3.4"/>
+        <path d="M400 620H366V690M574 620H608V690" stroke-width="3.4"/>
+        <path d="M438 586V660M536 586V660" stroke-width="3" opacity=".4"/>
+
+        <!-- Plant right -->
+        <path d="M1036 700C1030 654 1012 618 982 592M1036 700C1050 654 1070 626 1096 612" stroke="#5c9a84" stroke-width="3.2"/>
+        <path d="M988 606C973 598 968 583 974 568C989 576 995 590 991 603Z" fill="#9ccdbd" fill-opacity=".28" stroke="#5c9a84" stroke-width="2.8"/>
+        <path d="M1066 626C1076 610 1094 606 1108 613C1102 628 1086 636 1071 633Z" fill="#9ccdbd" fill-opacity=".28" stroke="#5c9a84" stroke-width="2.8"/>
+        <path d="M1014 712H1070L1062 750H1022Z" fill="#fbf8f0"/>
+      </g>
+    
+  </g>
+  <g fill="#5c9a84" opacity=".65">
+    <path d="M250 205C251.4 211.4 254.2 214.2 260.6 215.6C254.2 217 251.4 219.8 250 226.2C248.6 219.8 245.8 217 239.4 215.6C245.8 214.2 248.6 211.4 250 205Z"/>
+    <path d="M930 545C931 549.8 933.2 552 938 553C933.2 554 931 556.2 930 561C929 556.2 926.8 554 922 553C926.8 552 929 549.8 930 545Z"/>
+  </g>
+</svg>
