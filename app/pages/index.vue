@@ -754,6 +754,10 @@ useJsonLd(faqSchema(homeFaqs), 'ld-faq')
 .trust-strip__inner {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border-right: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: var(--line);
 }
 
 .trust-strip__item {
@@ -761,14 +765,10 @@ useJsonLd(faqSchema(homeFaqs), 'ld-faq')
   align-items: flex-start;
   gap: 0.75rem;
   padding: 1.35rem 1.5rem;
-  border-right: 1px solid var(--line);
+  background: var(--paper);
   color: var(--ink-soft);
   font-size: 0.78rem;
   line-height: 1.5;
-}
-
-.trust-strip__item:first-child {
-  border-left: 1px solid var(--line);
 }
 
 .trust-strip__item strong {
@@ -1207,14 +1207,6 @@ useJsonLd(faqSchema(homeFaqs), 'ld-faq')
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .trust-strip__item:nth-child(2) {
-    border-right: 0;
-  }
-
-  .trust-strip__item:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
   .areas-home__head {
     grid-template-columns: 1fr;
     gap: 1.2rem;
@@ -1342,23 +1334,6 @@ useJsonLd(faqSchema(homeFaqs), 'ld-faq')
 
   .trust-strip__inner {
     grid-template-columns: 1fr;
-  }
-
-  .trust-strip__item {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .trust-strip__item:first-child {
-    border-left: 0;
-  }
-
-  .trust-strip__item:nth-child(3) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .trust-strip__item:last-child {
-    border-bottom: 0;
   }
 
   .home-hero__phone strong {
