@@ -4,7 +4,7 @@
     class="brand"
     :class="[`brand--${size}`, { 'brand--stacked': stacked }]"
   >
-    <LogoMark class="brand__mark" />
+    <LogoMark class="brand__mark" :tone="tone" />
     <span class="brand__copy">
       <span class="brand__name">Obrt Čapalinka</span>
       <span v-if="tagline" class="brand__owner">vl. Sanela Šimara</span>
@@ -18,11 +18,13 @@ withDefaults(
     size?: 'sm' | 'md' | 'lg' | 'xl'
     tagline?: boolean
     stacked?: boolean
+    tone?: 'dark' | 'light'
   }>(),
   {
     size: 'md',
     tagline: true,
     stacked: false,
+    tone: 'dark',
   },
 )
 </script>

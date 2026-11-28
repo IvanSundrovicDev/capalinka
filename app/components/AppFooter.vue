@@ -5,7 +5,7 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <BrandLogo class="footer__logo" size="lg" />
+          <BrandLogo class="footer__logo" size="lg" tone="light" />
           <p class="footer__description">
             Lokalni obrt iz Donjeg Miholjca posvećen brizi o prostoru. Čišćenje,
             uređenje okoliša i prijevoz robe i materijala – s pažnjom prema

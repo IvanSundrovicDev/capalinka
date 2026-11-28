@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import sharp from 'sharp'
 
@@ -15,93 +15,6 @@ const TILE = '#d3e3db'
 
 const styles = `stroke="${INK}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"`
 
-const logoMarkPaths = `
-  <g stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M57 161C50 153 41 145 30 136" />
-    <path d="M55 157C46 155 38 150 33 143C42 141 49 145 55 152Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M44 148C34 147 26 143 20 137C29 133 37 136 43 143Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M34 138C28 131 24 123 23 114C31 118 36 125 36 133Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M28 131C25 121 25 112 28 103C34 111 34 121 31 130Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M167 161C174 153 183 145 194 136" />
-    <path d="M169 157C178 155 186 150 191 143C182 141 175 145 169 152Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M180 148C190 147 198 143 204 137C195 133 187 136 181 143Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M190 138C196 131 200 123 201 114C193 118 188 125 188 133Z" fill="currentColor" fill-opacity=".07"/>
-    <path d="M196 131C199 121 199 112 196 103C190 111 190 121 193 130Z" fill="currentColor" fill-opacity=".07"/>
-  </g>
-  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M29 99L112 29L195 99" stroke-width="4"/>
-    <path d="M51 90L112 39L173 90" stroke-width="2.7"/>
-    <path d="M58 88V158H166V88" stroke-width="3.4"/>
-    <path d="M30 164H192" stroke-width="3.4"/>
-    <path d="M93 158V124H131V158" stroke-width="3.2"/>
-    <circle cx="123.5" cy="141" r="2" fill="currentColor" stroke="none"/>
-    <rect x="92" y="99" width="40" height="27" rx="1.5" stroke-width="2.8"/>
-    <path d="M112 99V126M92 112.5H132" stroke-width="2.4"/>
-    <path d="M150 68V38H163V82" stroke-width="3"/>
-    <path d="M146.5 38H166.5" stroke-width="3"/>
-  </g>
-  <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M72 30C73.8 38.3 77.5 42 85.8 43.8C77.5 45.6 73.8 49.3 72 57.6C70.2 49.3 66.5 45.6 58.2 43.8C66.5 42 70.2 38.3 72 30Z"/>
-    <path d="M150 12C151.3 19 154.7 22.4 161.7 23.7C154.7 25 151.3 28.4 150 35.4C148.7 28.4 145.3 25 138.3 23.7C145.3 22.4 148.7 19 150 12Z"/>
-    <path d="M181 49C181.8 53.2 183.8 55.2 188 56C183.8 56.8 181.8 58.8 181 63C180.2 58.8 178.2 56.8 174 56C178.2 55.2 180.2 53.2 181 49Z"/>
-  </g>
-  <g fill="currentColor">
-    <circle cx="60" cy="67" r="2.4" opacity=".32"/>
-    <circle cx="169" cy="68" r="2" opacity=".26"/>
-    <circle cx="82" cy="24" r="1.6" opacity=".22"/>
-  </g>
-`
-
-const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180" color="${INK}">
-${logoMarkPaths}
-</svg>
-`
-
-const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" fill="#f7f4ec"/>
-  <g stroke="#103833" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M10 31L32 13L54 31"/>
-    <path d="M14 28V49H50V28"/>
-    <path d="M27 49V37H37V49"/>
-    <path d="M24 28H40V37H24Z"/>
-    <path d="M24 32.5H40"/>
-    <path d="M42 22V12H46V25"/>
-    <path d="M40 12H48"/>
-  </g>
-  <g stroke="#5c9a84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M18 49C14 46 12 42 12 38C17 39 20 42 21 46"/>
-    <path d="M46 49C50 46 52 42 52 38C47 39 44 42 43 46"/>
-    <path d="M32 12V8"/>
-  </g>
-  <g fill="#5c9a84">
-    <circle cx="11" cy="17" r="1.3"/>
-    <circle cx="53" cy="15" r="1.1"/>
-  </g>
-</svg>
-`
-
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#f7f4ec"/>
-  <g stroke="#103833" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M10 31L32 13L54 31"/>
-    <path d="M14 28V49H50V28"/>
-    <path d="M27 49V37H37V49"/>
-    <path d="M24 28H40V37H24Z"/>
-    <path d="M24 32.5H40"/>
-    <path d="M42 22V12H46V25"/>
-    <path d="M40 12H48"/>
-  </g>
-  <g stroke="#5c9a84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M18 49C14 46 12 42 12 38C17 39 20 42 21 46"/>
-    <path d="M46 49C50 46 52 42 52 38C47 39 44 42 43 46"/>
-    <path d="M32 12V8"/>
-  </g>
-  <g fill="#5c9a84">
-    <circle cx="11" cy="17" r="1.3"/>
-    <circle cx="53" cy="15" r="1.1"/>
-  </g>
-</svg>
-`
 
 function frame({ number, accent = SAGE, body }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
@@ -580,7 +493,7 @@ const scenes = [
   },
 ]
 
-function ogImage() {
+function ogImage(logoDataUri) {
   const headline = 'Čistoća koja se osjeti,'
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
@@ -598,9 +511,8 @@ function ogImage() {
   <circle cx="1058" cy="505" r="196" fill="none" stroke="#5c9a84" stroke-width="1.5" opacity=".28"/>
   <rect x="44" y="44" width="1112" height="542" rx="20" fill="none" stroke="#103833" stroke-width="1.4" opacity=".14"/>
 
-  <g transform="translate(78 66) scale(.7)" color="#103833">
-    ${logoMarkPaths}
-  </g>
+  <image href="${logoDataUri}" x="68" y="48" width="176" height="168" preserveAspectRatio="xMidYMid meet"/>
+
   <text x="258" y="144" font-family="Baskerville, 'Times New Roman', serif" font-size="54" fill="#103833">Obrt Čapalinka</text>
   <text x="261" y="180" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" letter-spacing="4.6" fill="#687a73">VL. SANELA ŠIMARA</text>
 
@@ -637,20 +549,51 @@ async function main() {
   await mkdir(galleryDir, { recursive: true })
   await mkdir(publicDir, { recursive: true })
 
-  await writeFile(join(publicDir, 'logo-mark.svg'), logoSvg)
+  const brandLogo = await readFile(join(publicDir, 'logo-mark.svg'), 'utf8')
+  const brandLogoInner = brandLogo
+    .replace(/^[\s\S]*?<svg[^>]*>/, '')
+    .replace(/<\/svg>\s*$/, '')
+
+  function brandIconSvg(size, { rounded = false, background = '#f7f4ec' } = {}) {
+    const padding = Math.round(size * 0.09)
+    const available = size - padding * 2
+    const scale = Math.min(available / 390, available / 372)
+    const width = 390 * scale
+    const height = 372 * scale
+    const x = (size - width) / 2
+    const y = (size - height) / 2
+    const radius = rounded ? Math.round(size * 0.22) : 0
+    const backdrop = background
+      ? `<rect width="${size}" height="${size}" rx="${radius}" fill="${background}"/>`
+      : ''
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
+      ${backdrop}
+      <g transform="translate(${x} ${y}) scale(${scale})">
+        ${brandLogoInner}
+      </g>
+    </svg>`
+  }
+
+  const faviconSvg = brandIconSvg(64, { rounded: true })
+  const appleIcon = brandIconSvg(512)
+  const ogIcon = brandIconSvg(512, { background: null })
+  const ogLogoBuffer = await sharp(Buffer.from(ogIcon)).png().toBuffer()
+  const logoDataUri = `data:image/png;base64,${ogLogoBuffer.toString('base64')}`
+
   await writeFile(join(publicDir, 'favicon.svg'), faviconSvg)
-  await writeFile(join(publicDir, 'og-image.svg'), ogImage())
+  await writeFile(join(publicDir, 'og-image.svg'), ogImage(logoDataUri))
 
   for (const scene of scenes) {
     await writeFile(join(galleryDir, scene.file), frame(scene))
   }
 
   await Promise.all([
-    sharp(Buffer.from(ogImage())).png().toFile(join(publicDir, 'og-image.png')),
-    sharp(Buffer.from(iconSvg)).resize(180, 180).png().toFile(join(publicDir, 'apple-touch-icon.png')),
-    sharp(Buffer.from(iconSvg)).resize(192, 192).png().toFile(join(publicDir, 'icon-192.png')),
-    sharp(Buffer.from(iconSvg)).resize(512, 512).png().toFile(join(publicDir, 'icon-512.png')),
-    sharp(Buffer.from(logoSvg)).resize(512, 512, { fit: 'contain', background: '#f7f4ec' }).png().toFile(join(publicDir, 'logo-mark.png')),
+    sharp(Buffer.from(ogImage(logoDataUri))).png().toFile(join(publicDir, 'og-image.png')),
+    sharp(Buffer.from(appleIcon)).resize(180, 180).png().toFile(join(publicDir, 'apple-touch-icon.png')),
+    sharp(Buffer.from(appleIcon)).resize(192, 192).png().toFile(join(publicDir, 'icon-192.png')),
+    sharp(Buffer.from(appleIcon)).resize(512, 512).png().toFile(join(publicDir, 'icon-512.png')),
+    sharp(Buffer.from(appleIcon)).png().toFile(join(publicDir, 'logo-mark.png')),
   ])
 
   const manifest = {
@@ -672,7 +615,7 @@ async function main() {
 
   await writeFile(join(publicDir, 'site.webmanifest'), `${JSON.stringify(manifest, null, 2)}\n`)
 
-  console.log(`Generated ${scenes.length} gallery illustrations, icons, manifest and og-image.`)
+  console.log(`Generated ${scenes.length} gallery illustrations, brand icons, manifest and og-image.`)
 }
 
 main().catch((error) => {

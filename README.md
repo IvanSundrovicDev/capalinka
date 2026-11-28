@@ -1,6 +1,6 @@
 # Obrt Čapalinka — website
 
-A fast, statically generated marketing site for **Obrt Čapalinka** (Donji Miholjac, Croatia), built with Nuxt 4. The design takes its palette, typography and line-art language from the supplied business card. The logo is recreated as a vector SVG so it stays sharp at every size.
+A fast, statically generated marketing site for **Obrt Čapalinka** (Donji Miholjac, Croatia), built with Nuxt 4. The design takes its palette, typography and line-art language from the supplied business card. The supplied logo is kept as a vector SVG so it stays sharp at every size.
 
 ## Stack
 
@@ -148,14 +148,15 @@ app/
   utils/                    schema.org builders
 public/
   images/gallery/           placeholder SVG illustrations
-  favicon.svg, icons, og-image.png, logo-mark.svg
-scripts/generate-assets.mjs regenerates visual assets
+  favicon.svg, icons, og-image.png, logo-mark.svg, logo-mark-light.svg
+scripts/generate-assets.mjs regenerates visual assets from logo-mark.svg
 nuxt.config.ts              modules, prerender routes, global meta
 netlify.toml                Netlify build, headers and caching configuration
 ```
 
 ## Notes
 
+- The brand mark lives in `public/logo-mark.svg` (dark) and `public/logo-mark-light.svg` (cream/mint variant for the dark footer). `npm run assets` reads the dark mark to regenerate the favicon, PWA icons, `logo-mark.png` and the OG image; update both SVGs when the logo changes.
 - Nuxt also creates a `robots.txt` and `sitemap.xml` at build time. The privacy page is excluded from the sitemap and set to `noindex`; it remains accessible from the footer.
 - The Leaflet map on the contact page loads OpenStreetMap tiles only when that page is opened.
 - Netlify build settings live in `netlify.toml`; set `NUXT_PUBLIC_SITE_URL` in Netlify for correct canonical and sitemap URLs.
