@@ -1,5 +1,6 @@
 [build]
   command = "npm run generate"
+  # Nuxt links dist to the generated .output/public directory.
   publish = "dist"
 
 [build.environment]

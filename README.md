@@ -26,7 +26,7 @@ Open `http://localhost:3000`.
 | Command | Purpose |
 | --- | --- |
 | `npm run dev` | Development server |
-| `npm run generate` | Static production build in `.output/public` |
+| `npm run generate` | Static production build in `.output/public` (also linked as `dist`) |
 | `npm run build` | Server build (not required for static hosting) |
 | `npm run preview` | Preview the generated static site locally |
 | `npm run assets` | Regenerate gallery illustrations, icons and OG image |
@@ -36,7 +36,7 @@ Open `http://localhost:3000`.
 The site is configured for **Netlify** and other static hosts:
 
 - Build command: `npm run generate`
-- Publish directory: `.output/public`
+- Publish directory: `dist` (Nuxt links this to the generated `.output/public`)
 - Node: 22 LTS or newer
 - `netlify.toml` in the repository already provides the build command, publish directory, Node version, security headers and asset caching.
 
