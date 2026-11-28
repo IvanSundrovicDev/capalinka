@@ -762,7 +762,8 @@ useJsonLd(faqSchema(homeFaqs), 'ld-faq')
 
 .trust-strip__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   padding: 1.35rem 1.5rem;
   background: var(--paper);
